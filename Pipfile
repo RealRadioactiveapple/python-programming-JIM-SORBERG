@@ -7,9 +7,11 @@ name = "pypi"
 flask = "==0.12.1"
 numpy = "*"
 requests = {editable = true, git = "https://github.com/requests/requests.git"}
+matplotlib = "*"
 
 [dev-packages]
 pytest = "*"
+ipykernel = "*"
 
 [requires]
 python_version = "3.9"
