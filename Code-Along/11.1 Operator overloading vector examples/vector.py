@@ -1,3 +1,5 @@
+from plotter import PlotVectors
+
 class Vector:
     """a class to represent a eucliden vector magnitude and direction """
 
@@ -22,8 +24,24 @@ class Vector:
             numbers = (a+b for a,b in zip(self.numbers, other.numbers))
             return Vector(*numbers)
 
+    def __sub__(self, other: "Vector") -> "Vector":
+         if self.validate_vector(other):
+            numbers = (a-b for a,b in zip(self.numbers, other.numbers))
+            return Vector(*numbers)
+
+    def __mul__(self, value: float) -> "Vector":
+        if not isinstance(value,(float, int)):
+            raise TypeError(f"it most be a number")
+        
+        numbers = (value * a for a in self.numbers)
+        return Vector(*numbers)
+
+    def __rmul__(self, value: float):
+        return self*value
+
+
     def __len__ (self) -> int:
-        """retun number of components in a vector not the eucl"""
+        """retun number of components in a vector not the euclidean lenght"""
         return len(self.numbers)
     
     def validate_vector(self, other: "Vector") -> bool:
@@ -40,4 +58,23 @@ class Vector:
 
     def __getitem__(self, item: int) ->float:
         return self.numbers[item]
+
+    def __eq__(self, other) -> bool:
+        if not self.validate_vector(other):
+            return False
+        
+        for num1, num2 in zip(self.numbers, other.numbers):
+            if num1 != num2:
+                return False
+        return True
+
+    def plot(self, *others: "Vector") -> None:
+        # TODO: error checking
+        # composition -> vector has a PlotVector object
+        plot_vector = PlotVectors(self, *others)
+        
+        plot_vector.plot()
+        
+
+
 # v1 = (1,1), v2 = (1,1,3,4,5,6,)S
