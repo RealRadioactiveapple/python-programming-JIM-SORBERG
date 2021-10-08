@@ -102,10 +102,12 @@ class Cirkel(Geomatry_shapes):
         return f"x is {self.x}, y is {self.y}, radius is {self.radius}"
 
 """MIN KERNEL DOG VET INTE VARFÖR HAN INTE KLART MED """
+
+"""
 def iscirkel(self, ) 
         if not isinstance()
         return self.radius  ==   
-
+"""
     
 class Rektangel(Geomatry_shapes): 
 
@@ -191,9 +193,9 @@ class Rektangel(Geomatry_shapes):
         return f"x is {self.x}, y is {self.y}, side1 is {self.side1} side2 is {self.side2}"
 
     """MIN KERNEL DOG VET INTE VARFÖR HAN INTE KLART MED """
-    def isrektangel(self, ) 
+    """ def isrektangel(self, ) 
         if not isinstance()
-        return self.side1 and self.side2 ==    
+        return self.side1 and self.side2 ==    """ 
 
 
 
