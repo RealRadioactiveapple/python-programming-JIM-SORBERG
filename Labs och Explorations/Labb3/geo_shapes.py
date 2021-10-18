@@ -119,23 +119,23 @@ class Rektangel(Geomatry_shapes):
 
     @property
     def side1(self):
-        return self.side1
+        return self._side1
 
     @side1.setter
     def side1 (self, value):
         if not isinstance(value, int):
             raise TypeError("must be int")
-        self.side1 = value   
+        self._side1 = value   
 
     @property
     def side2(self):
-        return self.side2
+        return self._side2
 
     @side2.setter
     def side2 (self, value):
         if not isinstance(value, int):
             raise TypeError("must be int")
-        self.side2 = value   
+        self._side2 = value   
 
 
 
